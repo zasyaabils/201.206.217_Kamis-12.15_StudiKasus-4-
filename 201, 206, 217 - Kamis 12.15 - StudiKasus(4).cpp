@@ -9,13 +9,11 @@ private:
     int tabungan[12];
 
 public:
-    // Konstruktor
     KeuanganAndi(int saku, int jmlBulan) {
         uangSaku = saku;
         bulan = jmlBulan;
     }
 
-    // Input pengeluaran tiap bulan dan hitung tabungan
     void inputData() {
         for (int i = 0; i < bulan; i++) {
             cout << "Pengeluaran bulan ke-" << (i + 1) << ": ";
@@ -24,7 +22,6 @@ public:
         }
     }
 
-    // Menampilkan data secara iteratif
     void tampilkanData() {
         cout << "\n============= Rincian Bulanan =============" << endl;
         for (int i = 0; i < bulan; i++) {
@@ -35,7 +32,6 @@ public:
         cout << "===========================================\n";
     }
 
-    // Menghitung total pengeluaran secara iteratif
     int hitungTotalPengeluaran() {
         int total = 0;
         for (int i = 0; i < bulan; i++) {
@@ -44,7 +40,6 @@ public:
         return total;
     }
 
-    // Menghitung total tabungan secara rekursif
     int hitungTabunganRekursif(int i) {
         if (i >= bulan) return 0;
         return tabungan[i] + hitungTabunganRekursif(i + 1);
